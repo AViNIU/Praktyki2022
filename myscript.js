@@ -23,7 +23,6 @@ function calculate(var1, var2, method) {
     else if (method == "divi") {
         if (var2 == 0) return "nie dziel przez 0 xD"
         else return var1 / var2;
-
     }
 }
 
@@ -84,7 +83,7 @@ function secondLast(arr1) {
     let arr2 = arr1
     if (checkString(arr2)) {
         console.log("aha")
-        arr2 = order(arr2);
+        arr2 = bblSortString(arr2);
         return arr2[arr2.length - 2];
     } else {
         arr2 = bblSort(arr2);
@@ -124,7 +123,45 @@ function recurse(a, n) {
     if (b <= n) recurse(b, n)
     else return;
 }
+let arrayay1 = ["Anna","Maria"];
+let arrayay2 = ["Tomek","Adam","Marek","Bartek"];
 
+//zadanie 1
+    let last = (arr1) => arr1[arr1.length-1]
+
+//zadanie 2
+    let joinArr = (arr1,arr2) => [...arr1,...arr2];
+//zadanie 3
+    let filter = (arrayay1,arrayay2) => {
+        let arrayay3 = [...arrayay1,...arrayay2];
+        let filterarrayay3 = arrayay3.filter(arrayay3 => arrayay3.length == 4)
+        return filterarrayay3;
+    }
+    //zadanie 4
+
+    let array12 = [1,2,3,4,5]
+
+    let initialValue = 0;
+
+    let subValue = array12.reduce((prevoiusValue, currentValue) => prevoiusValue + currentValue, initialValue)
+
+
+
+
+    //zadanie 5
+    let powerValue = (arr1) => {
+        for (let i = 0; i < arr1.length; i++) {
+           arr1[i] = Math.pow(arr1[i],2) + 3
+        }
+        return arr1;
+    }
 console.log(fibonacci(10))
-console.log(secondLast([1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]))
-console.log(recurse(1, 25))
+console.log(secondLast(["aha","a","ahaha","aha_aha"]))
+console.log(recurse(1, 2))
+console.log(joinArr([2,3,4],[1,2,3]));
+
+
+console.log(last(array12));
+console.log(filter(arrayay1,arrayay2));
+console.log(subValue);
+console.log(powerValue(array12));
