@@ -20,7 +20,11 @@ function calculate(var1, var2, method) {
     if (method == "add") return var1 + var2;
     else if (method == "sub") return var1 - var2;
     else if (method == "mul") return var1 * var2;
-    else if (method == "divi") return var1 / var2;
+    else if (method == "divi") {
+        if (var2 == 0) return "nie dziel przez 0 xD"
+        else return var1 / var2;
+
+    }
 }
 
 function palindrome(var1) {
@@ -122,5 +126,5 @@ function recurse(a, n) {
 }
 
 console.log(fibonacci(10))
-console.log(secondLast([1, 2, 3, 4, 5, 6]))
+console.log(secondLast([1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6]))
 console.log(recurse(1, 25))
