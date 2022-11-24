@@ -11,9 +11,9 @@ const books = [
 ];
 
 const compose =
-    (...aha) =>
+    (...fns) =>
     (initialVal) =>
-    aha.reduce((val, fn) => fn(val), initialVal);
+    fns.reduce((val, fn) => fn(val), initialVal);
 const genreY = (book) => book.filter((b) => b.genre.endsWith("y"));
 const evenPages = (book) => book.filter((b) => b.pages % 2 == 0);
 const titleLettersWithoutSpaces = (book) =>
