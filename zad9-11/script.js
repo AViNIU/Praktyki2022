@@ -17,19 +17,12 @@ p.then((value) => {
 
 
 
-let a = 1;
-let b = "aha";
-let p1 = new Promise((resolve, reject) => {
 
-    if (typeof a == "number" && typeof b == "number") {
-        resolve("success");
-    } else {
-        reject("failed");
-    }
-});
-
-p1.then((value) => {
-    console.log(a + b);
-}).catch((error) => {
-    console.log("jedna z zmiennych nie jest liczba");
-});
+const multiplyAsync = (x, y) => new Promise((resolve, reject) =>
+{
+	if (typeof x !== "number" || typeof y !== "number")
+		return reject("nie jest liczba");
+	resolve(x * y);
+})
+multiplyAsync(1, 3).then(console.log);
+multiplyAsync(1, "123").then(console.log);
